@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <title>CS1 UI Research</title>
+
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="This contains research into modern 3D user interfaces."
+    />
+    <meta name="keywords" content="3D, UI, JavaScript" />
+    <meta name="author" content="SirFizX" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta property="og:site_name" content="CS1UI" />
+    <meta property="og:title" content="CS1 UI Research Division." />
+    <meta
+      property="og:description"
+      content="This contains research into modern 3D user interfaces for integration with the CS1 Game Engine."
+    />
+    <meta
+      property="og:image"
+      content="https://cdn.glitch.com/30d8e950-7373-42bb-b2dd-bd2ce059463a%2FCS1_logo_128.png?v=1597412966966"
+    />
+
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+    <script src="gradient-sky.js"></script>
+    <script src="cs1radialmenu.js"></script>
+    <script src="cs1panel.js"></script>
+    <script src="cs1slider.js"></script>
+    <script src="cs1button.js"></script>
+  </head>
+  <body>
+    <a-scene rain>
+      <a-gradient-sky
+        topcolor=".02 .05 0.44)"
+        bottomcolor="0.83 0.6 0.27"
+      ></a-gradient-sky>
+      
+      <a-entity id="particles" position="0 2.25 -15" particle-system="color: #EF0000,#44CC00"></a-entity>
+      
+      <a-camera look-controls="pointerLockEnabled:true">
+        <a-cursor raycaster="objects:.clickable"></a-cursor>
+      </a-camera>
+      <a-entity
+        id="lh"
+        laser-controls="hand: left"
+        raycaster="objects:.clickable"
+      ></a-entity>
+      <a-entity
+        id="rh"
+        laser-controls="hand: right"
+        raycaster="objects:.clickable"
+      ></a-entity>
+      <cs1-radial-menu position="0 0.5 -1.6"></cs1-radial-menu>
+      <cs1-radial-menu
+        position="1.1 0.5 -1.6"
+        labels="1, 2, 3, 4, 5, 6"
+        margin="5"
+        centercolor="#5C97E0"
+        bgcolors="red, green, lime, salmon, teal, blue"
+      ></cs1-radial-menu>
+
+      <cs1-radial-menu
+        position="-1.1 0.5 -1.6"
+        labels="1, 2, 3, 4, 5, 6, 7, 8"
+        margin="3"
+        centercolor="#6970D3"
+        bgcolors="red, green, lime, salmon, teal, blue, #BA8053, #D6BD2F"
+      ></cs1-radial-menu>
+
+      <cs1-panel 
+        id="center-panel"
+        position="0 2.1 -1.9" 
+        width="3" 
+        height="2"
+        borderwidth="0.1"
+        toprightradius=".35"
+        bottomleftradius=".35"></cs1-panel>
+      
+      <cs1-panel 
+        id="right-panel"
+        position="2.8 2.1 -.75"
+        rotation="0 -45 0"
+        width="3" 
+        height="2"
+        borderwidth="0.1"
+        topleftradius=".35"
+        bottomrightradius=".35"></cs1-panel>
+      
+      <cs1-panel 
+        id="left-panel"
+        position="-2.8 2.1 -.75"
+        rotation="0 45 0"
+        width="3" 
+        height="2"
+        borderwidth="0.1"
+        topleftradius=".35"
+        bottomrightradius=".35"></cs1-panel>
+
+     <a-image 
+        id="poster"
+        src="https://cdn.glitch.com/30d8e950-7373-42bb-b2dd-bd2ce059463a%2FHope.jpg?v=1597527528201" 
+        position="0 4.33 -2"
+        scale="2 2 2"
+        opacity="0"></a-image>
+      
+    </a-scene>
+    <script src="app.js"></script>
+  </body>
+</html>
