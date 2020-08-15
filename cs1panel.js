@@ -36,9 +36,17 @@ AFRAME.registerComponent('cs1panel', {
     this.backpanel = document.createElement('a-rounded')
     this.el.appendChild(this.backpanel)
     
+    this.el.setBorderColor = this.setBorderColor.bind(this)
+    this.el.setColor = this.setColor.bind(this)
     
-    
-    
+  },
+  
+  setBorderColor: function(color){
+    this.backpanel.setAttribute('color',color)
+  },
+  
+  setColor: function(color){
+    this.panel.setAttribute('color',color)
   },
   
   update: function () {
